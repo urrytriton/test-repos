@@ -1,0 +1,466 @@
+$color-white: #ffffff;
+$color-black: #000000;
+$color-red: #E80000;
+$color-blue: #2147A7;
+$color-blue-rich: #1F32E0;
+$color-discord: #877CFF;
+$color-stat-bg: #F2F7FF;
+$color-text-secondary: #747474;
+$color-text-stat-number: #05a905;
+$color-footer-bg: #F4F6F9;
+$color-footer-border: #BABABA;
+
+#page.drawers {
+  padding: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.frontpage {
+  font-size: 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.frontpage p {
+  margin-block-end: 1em;
+}
+
+.frontpage a {
+  color: $color-blue;
+  text-decoration: underline;
+}
+
+.header-frontpage {
+  padding: 165px 50px 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  color: $color-white;
+  background-image: url([[pix:theme|assets/main-background-wide]]);
+  background-size: cover;
+  background-position: center;
+
+  &__welcome {
+    font-size: 2.75rem;
+    line-height: 140%;
+    max-width: 1080px;
+    text-align: center;
+    text-shadow: 0 0 10px $color-black;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 2rem;
+      max-width: 820px;
+    }
+
+    @media screen and (max-width: 580px) {
+      font-size: 1.4rem;
+      max-width: 820px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 85px 30px 60px;
+  }
+
+  @media screen and (max-width: 580px) {
+    padding: 70px 30px 45px;
+    gap: 45px;
+  }
+}
+
+.btn-frontpage {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 170%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: none;
+  text-decoration: none !important;
+  text-align: center;
+
+  &-primary {
+    padding: 11px 15px;
+    color: $color-white !important;
+    background-color: $color-red;
+  }
+}
+
+.wrapper-frontpage {
+  margin: 85px auto 0;
+  padding: 0 30px;
+  max-width: 1190px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 45px;
+  }
+}
+
+
+.h2-frontpage {
+  margin-bottom: 30px;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 100%;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+  }
+}
+
+.h3-frontpage {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 110%;
+  color: $color-blue;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+.divider-frontpage {
+  margin-bottom: 45px;
+  width: 75px;
+  height: 4px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: $color-black;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 35px;
+  }
+}
+
+.text-frontpage {
+  font-size: 1.25rem;
+  line-height: 175%;
+  text-align: justify;
+}
+
+.courses-container-frontpage {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+.course-frontpage {
+  &:nth-child(even) .course-frontpage__grid {
+    flex-direction: row-reverse;
+  }
+
+  &__grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column-reverse !important;
+      align-items: center;
+    }
+
+    img {
+      padding-top: 16px;
+      max-width: 440px;
+      height: auto;
+
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.about {
+  position: relative;
+
+  &__image {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    z-index: 1;
+  }
+}
+
+.text-about {
+  position: relative;
+  z-index: 5;
+}
+
+.text-requirements {
+  padding-top: 30px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.requirements-list {
+  &__item {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &-marker {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 56px;
+      height: 56px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background-color: $color-blue-rich;
+      color: $color-white;
+      font-size: 2rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.discord-banner {
+  .wrapper-frontpage {
+    margin-top: 0;
+  }
+
+  margin-top: 85px;
+  background-color: $color-discord;
+  color: $color-white;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+
+  &-inner {
+    position: relative;
+    padding: 65px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      top: -55px;
+      left: -190px;
+      width: 302px;
+      height: 231px;
+      background-image: url([[pix:theme|assets/discord-icon]]);
+      z-index: 1;
+    }
+
+    p {
+      position: relative;
+      max-width: 550px;
+      font-size: 2.25rem;
+      line-height: 160%;
+      z-index: 5;
+
+      @media screen and (max-width: 880px) {
+        font-size: 1.75rem;
+        line-height: 140%;
+      }
+    }
+
+    a {
+      position: relative;
+      font-size: 1.5rem;
+      color: inherit;
+      z-index: 5;
+    }
+
+    @media screen and (max-width: 880px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 35px 15px;
+    }
+  }
+}
+
+.stat {
+  &__wrapper {
+    margin-top: 0;
+    padding: 0 100px;
+    max-width: 1330px;
+
+    @media screen and (max-width: 960px) {
+      padding: 0 30px;
+      max-width: 1190px;
+    }
+  }
+
+  &__container {
+    width: 115%;
+    margin-left: -85px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 960px) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &__item {
+    padding: 32px 40px 32px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $color-stat-bg;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    position: relative;
+
+    header {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 375px) {
+      padding: 15px 20px 15px 15px;
+      min-width: 230px;
+      font-size: 1rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: -7px;
+    top: 17px;
+  }
+
+  &__rating {
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__rating-caption {
+    max-width: 210px;
+    line-height: 120%;
+    color: $color-text-secondary;
+  }
+
+  &__record:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__record-number {
+    color: $color-text-stat-number;
+  }
+}
+
+.docs {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $color-text-secondary;
+    margin-bottom: 15px;
+  }
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 30px 50px;
+
+  p {
+    font-size: 2.25rem;
+    font-style: italic;
+    text-align: center;
+
+    @media screen and (max-width: 375px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.footer-frontpage {
+  background-color: $color-footer-bg;
+  border-top: 1px solid $color-footer-border;
+
+  &__container {
+    margin-top: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    >* {
+      flex-basis: 260px;
+    }
+
+    @media screen and (max-width: 580px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__icon_central {
+    text-align: center;
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 45px;
+
+    @media screen and (max-width: 580px) {
+      justify-content: center;
+    }
+  }
+
+  p {
+    text-align: right;
+
+    @media screen and (max-width: 580px) {
+      text-align: center;
+    }
+  }
+}
