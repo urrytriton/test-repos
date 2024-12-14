@@ -1,0 +1,233 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Летный состав вирт ДОСААФ и МЧС</title>
+  <description>Летный состав вирт ДОСААФ и МЧС</description>
+  <style>
+    /* плагин дублирует заголовок с классом h2 зачем-то выше основного заголовка, убираем его */
+    .h2 {
+      display: none;
+    }
+
+    .pilots-root {
+      overflow-x: scroll;
+    }
+
+    .pilots-header {
+      margin-bottom: 65px;
+      height: 300px;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    @media screen and (max-width: 768px) {
+      .pilots-header {
+        height: 200px;
+      }
+    }
+
+    .pilots-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pilots-h-1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 100%;
+      margin-top: 300px;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 991px) {
+      .pilots-h-1 {
+        margin-top: 250px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .pilots-h-1 {
+        font-size: 1.75rem;
+        margin-top: 130px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .divider-frontpage {
+      margin-bottom: 45px;
+      width: 75px;
+      height: 4px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      background-color: #000000;
+    }
+
+    @media screen and (max-width: 768px) {
+      .divider-frontpage {
+        margin-bottom: 35px;
+      }
+    }
+
+    .pilots-logo {
+      display: block;
+      position: absolute;
+      right: 12%;
+      top: 400px;
+      z-index: 20;
+    }
+
+    .pilots-root th {
+      background-color: #f0f0f0;
+    }
+
+    /** Цвет строк таблицы с обязательными материалами (нечетные строки) */
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: transparent !important;
+    }
+
+    /** Цвет строк таблицы с обязательными материалами (нечетные строки) */
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: #f8f8f8 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="pilots-header">
+    <img src="assets/virtdosaaf.jpg" alt=""
+      height="300" />
+  </header>
+
+  <h1 class="pilots-h-1">Летный состав вирт ДОСААФ и МЧС</h1>
+  <div class="divider-frontpage"></div>
+
+  <div id="pilots-root" class="pilots-root">
+    <img class="pilots-logo" src="https://ptd.vatrus.info/theme/image.php/boost/theme/1711304386/assets/logo_opaque"
+      alt="">
+  </div>
+
+  <script>
+    // --------------------------------------------------------------
+    /**
+     * РЕДАКТИРУЕМЫЙ СПИСОК ПИЛОТОВ
+     */
+    const pilotsList = [
+      {
+        name: 'Юрий',
+        callsign: '12101',
+        rating: 'Командир',
+        vatsimId: '1115495',
+      },
+      {
+        name: 'Алексей',
+        callsign: '12519',
+        rating: 'Нач ГРП',
+        vatsimId: '1679445',
+      },
+      {
+        name: 'Федор',
+        callsign: '12122',
+        rating: 'Летчик',
+        vatsimId: '1100121',
+      },
+      {
+        name: 'Алексей',
+        callsign: '12486',
+        rating: 'Летчик',
+        vatsimId: '1762486',
+      },
+      {
+        name: 'Александр',
+        callsign: '12327',
+        rating: 'Летчик',
+        vatsimId: '1623272',
+      },
+      {
+        name: 'Артем',
+        callsign: '12236',
+        rating: 'Летчик',
+        vatsimId: '1830236',
+      },
+      {
+        name: 'Виталий',
+        callsign: '12196',
+        rating: 'Летчик',
+        vatsimId: '1209202',
+      },
+      {
+        name: 'Владимир',
+        callsign: '12708',
+        rating: 'Летчик',
+        vatsimId: '1770849',
+      },
+      {
+        name: 'Егор',
+        callsign: '12227',
+        rating: 'Курсант',
+        vatsimId: '1822705',
+      },
+      {
+        name: 'Юрий',
+        callsign: '12609',
+        rating: 'Курсант',
+        vatsimId: '1260970',
+      },
+      {
+        name: 'Клим',
+        callsign: '12661',
+        rating: 'Курсант',
+        vatsimId: '1666614',
+      },
+      {
+        name: 'Станислав',
+        callsign: '12146',
+        rating: 'Курсант',
+        vatsimId: '1666496',
+      }
+      
+    ]
+    // --------------------------------------------------------------
+
+    const pilotsRoot = document.getElementById('pilots-root')
+    const table = document.createElement('table');
+    table.classList.add('table', 'table-striped', 'table-bordered');
+    const thead = document.createElement('thead');
+    table.appendChild(thead);
+    const headerRow = document.createElement('tr');
+
+    const headers = ['Имя', 'Позывной', 'Должность', 'VATSIM ID'];
+    headers.forEach(headerText => {
+      const header = document.createElement('th');
+      header.classList.add('table-light');
+      header.textContent = headerText;
+      headerRow.appendChild(header);
+    });
+
+    thead.appendChild(headerRow);
+
+    const tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+
+    pilotsList.forEach(pilot => {
+      const row = document.createElement('tr');
+
+      Object.values(pilot).forEach(text => {
+        const cell = document.createElement('td');
+        cell.textContent = text;
+        row.appendChild(cell);
+      });
+
+      tbody.appendChild(row);
+    });
+
+    pilotsRoot.appendChild(table);
+  </script>
+</body>
+
+</html>
